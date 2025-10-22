@@ -1,3 +1,24 @@
+:root {
+  --color-fondo: #f4f4f4;
+  --color-texto: #333;
+  --color-header: #1a3f5c;
+  --color-footer: #1a3f5c;
+  --color-card: #ffffff;
+  --color-borde: #1a3f5c;
+  --color-btn: #1a3f5c;
+  --color-btn-texto: #ffffff;
+};
+ body.dark-mode {
+  --color-fondo: #121212;
+  --color-texto: #f1f1f1;
+  --color-header: #0d1b2a;
+  --color-footer: #0d1b2a;
+  --color-card: #1e1e1e;
+  --color-borde: #3a506b;
+  --color-btn: #3a506b;
+  --color-btn-texto: #ffffff;
+}
+
 html, body {
   height: 100%;
   margin: 0;
