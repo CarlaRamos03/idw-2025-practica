@@ -5,110 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDW_57</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> 
     <link rel="stylesheet" href="css/estilos.css"> 
-    <style>
-        /* Ancho fijo para todas las cards */
-        .card {
-            width: 18rem;
-        }
-    </style>
 </head>
-<body data-bs-theme="light">
-
-    <!-- HEADER -->
+<body>
     <header>
-        <h1 class="text-center my-3">CENTRO MÉDICO - IDW 57</h1>
-
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-sm" style="background-color: #1a3f5c;" data-bs-theme="light">
+        <h1>CENTRO MÉDICO - IDW 57 </h1>
+            <nav class="navbar navbar-expand-sm bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="img/logo.png" alt="Logo" width="140" height="140" class="d-inline-block align-text-top">
-                </a>
+            <a class="navbar-brand" href="#"></a>
+              <img src="img/logo.png" alt="Logo" width="140" height="140" class="d-inline-block align-text-top">
+        
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            
+              </button>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+               <div class="navbar-nav ms-auto">
+                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                 <a class="nav-link active" href="institucional.html">Institucional</a>
+                 <a class="nav-link active" href="contacto.html">Contacto</a>
+                 <button id="theme-toggle" class="btn btn-light ms-3">🌙</button>
+               </div>
+             </div>
+           </div>
+          </nav>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto align-items-center">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
-                        <a class="nav-link active text-white" href="institucional.html">Institucional</a>
-                        <a class="nav-link active text-white" href="contacto.html">Contacto</a>
-                        <button id="theme-toggle" class="btn btn-light ms-3">🌙</button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <nav class="navbar" style="background-color: #1a3f5c;" data-bs-theme="light"></nav>
+
+
+
     </header>
 
-    <!-- MAIN -->
-    <main class="container my-5">
-        <!-- Obras Sociales -->
+    <main class="container">
         <section class="mb-5">
-            <h2 class="mb-3">Obras Sociales</h2>
-            <div class="d-flex flex-wrap mb-4" style="gap: 10px;">
+            <h2 class="mb-3"> Obras Sociales </h2>
+            <div class="d-flex-wrap gap=10px mb-4">
                 <a href="https://www.osde.com.ar/" class="btn btn-secondary" target="_blank">OSDE</a>
                 <a href="https://www.swissmedicalcenter.com.ar/" class="btn btn-secondary" target="_blank">Swiss Medical</a>
-                <a href="https://medicus.com.ar/" class="btn btn-secondary" target="_blank">Medicus</a>
+                <a href="https://medicus.com.ar/" class="btn btn-secondary" target="_blank">Medicus</a>                    
                 <a href="https://www.medife.com.ar/" class="btn btn-secondary" target="_blank">Medifé</a>
                 <a href="https://www.oser.gob.ar/" class="btn btn-secondary" target="_blank">OSER</a>
                 <a href="https://www.pami.org.ar/" class="btn btn-secondary" target="_blank">PAMI</a>
             </div>
         </section>
+        <section class="catalogo">
+            <h2 class="mb-2"> Profesionales </h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-18rem">
+                    <img src="img/ginecologa.png" width="100" height="140">
+                    <div class="card-body">
+                        <h5 class="card-title">Dra. Sonia Espinoza</h5>
+                        <p class="card-text">Especialidad: Ginecología</p>
+                        <a href="#" class="btn btn-primary">Turnos</a>
+                    </div>
+                </div>
+                </div>                    
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-18rem">                    
+                    <img src="img/medica.png" width="100" height="140" >
+                    <div class="card-body">
+                        <h5 class="card-title">Dra. María Paz Frana</h5>
+                        <p class="card-text">Especialidad: Medicina Familiar</p>
+                        <a href="#" class="btn btn-primary">Turnos</a>                
+                    </div>
+                </div>
+                </div>  
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-18rem">                     
+                    <img src="img/medico.png" width="100" height="140" >
+                    <div class="card-body">                    
+                        <h5 class="card-title">Dr. Martín Rivas</h5>
+                        <p class="card-text">Especialidad: Cardiología</p>
+                        <a href="#" class="btn btn-primary">Turnos</a>                  
+                    </div>
+                </div>
+                </div>  
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-18rem">  
+                    <img src="img/pediatra.png" width="100" height="140" >
+                    <div class="card-body">    
+                        <h5 class="card-title">Dra. Valentina Sotto</h5>
+                        <p class="card-text">Especialidad: Pediatría</p>
+                        <a href="#" class="btn btn-primary">Turnos</a>   
+                    </div>
+                </div>
+                </div>  
+                <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card w-18rem">                      
+                    <img src="img/traumatologo.png" width="100" height="140" >
+                    <div class="card-body">                     
+                        <h5 class="card-title">Dr. Nicolás Herrera</h5>
+                        <p class="card-text">Especialidad: Traumatología</p>
+                        <a href="#" class="btn btn-primary">Turnos</a>  
+                    </div>
+                </div>
+                </div>  
 
-        <!-- Profesionales -->
-       <section class="catalogo my-5">
-  <h2 class="mb-4">Profesionales</h2>
-  <div class="row g-4">
-    <!-- Card 1 -->
-    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-      <div class="card">
-        <img src="img/ginecologa.png" class="card-img-top" alt="Ginecóloga">
-        <div class="card-body text-center">
-          <h5 class="card-title">Dra. Sonia Espinoza</h5>
-          <p class="card-text">Especialidad: Ginecología</p>
-          <a href="#" class="btn btn-primary">Turnos</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-      <div class="card">
-        <img src="img/medica.png" class="card-img-top" alt="Medicina Familiar">
-        <div class="card-body text-center">
-          <h5 class="card-title">Dra. María Paz Frana</h5>
-          <p class="card-text">Especialidad: Medicina Familiar</p>
-          <a href="#" class="btn btn-primary">Turnos</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-      <div class="card">
-        <img src="img/medico.png" class="card-img-top" alt="Cardiología">
-        <div class="card-body text-center">
-          <h5 class="card-title">Dr. Martín Rivas</h5>
-          <p class="card-text">Especialidad: Cardiología</p>
-          <a href="#" class="btn btn-primary">Turnos</a>
-        </div>
-         </div>
-        </div>
-         </div>
+            </div>
         </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="text-center py-3" style="background-color:#f4f4f4;">
+
+
+    </main>
+    <footer>
         <p>&copy; 2025 - Centro Médico IDW_57</p>
     </footer>
-
     <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
