@@ -81,12 +81,14 @@ section.profesionales {
     padding: 18px 22px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
-  min-height: 150px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
+
+    width: 100%; 
+    max-width: 18rem;
+    box-sizing: border-box;
 }
 .profesional:hover {
   transform: translateY(-4px);
@@ -187,15 +189,18 @@ body.contacto main form button:hover {
 }
 
 .card-nosotros {
-  width: 280px; 
   background-color: var(--bs-card-bg);
   color: var(--bs-body-color);
   border-color: var(--bs-primary);
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  width: 100%;
+  max-width: 18rem; 
   box-sizing: border-box;
 }
+
 
 .card-nosotros:hover {
   transform: translateY(-4px);
@@ -225,4 +230,13 @@ body.contacto main form button:hover {
   max-width: 700px;
   box-sizing: border-box;
   display: block;
+}
+.card, .card-body {
+  text-align: center;
+}
+
+.card-img-top {
+  width: auto;
+  height: 140px;
+  object-fit: cover;
 }
