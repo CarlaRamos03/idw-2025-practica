@@ -23,20 +23,20 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   text-align: center;
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto;
   padding: 40px 15px;
   display: flex;
   flex-direction: column;
@@ -139,6 +139,8 @@ footer {
 body.contacto main {
   background-color: var(--color-fondo);
   padding: 40px 15px;
+  display: block;
+  min-height: auto;
 }
 
 body.contacto h2 {
