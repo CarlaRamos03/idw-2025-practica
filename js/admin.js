@@ -1,23 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-
-    // ==========================
-    // FUNCIONES AUXILIARES
-    // ==========================
-    function obtenerMedicos() {
-        return JSON.parse(localStorage.getItem('medicos')) || [];
-    }
-
-    function guardarMedicos(medicos) {
-        localStorage.setItem('medicos', JSON.stringify(medicos));
-    }
-
-    function generarId() {
-        return Date.now(); // ID único basado en timestamp
-    }
-
-    // ==========================
-    // ALTA DE MEDICOS
-    // ==========================
+    // -------------------- ALTA DE MÉDICOS --------------------
     const formAlta = document.getElementById('form-alta');
     const mensajeAlta = document.getElementById('mensaje-alta');
 
@@ -28,29 +10,33 @@ document.addEventListener('DOMContentLoaded', function () {
             const nombre = document.getElementById('nombre').value.trim();
             const especialidad = document.getElementById('especialidad').value.trim();
             const obras = document.getElementById('obras').value.trim();
+            const horarios = document.getElementById('horarios').value.trim() || 'A confirmar';
+            const consultorio = document.getElementById('consultorio').value.trim() || 'A asignar';
+            const matricula = document.getElementById('matricula').value.trim() || 'En trámite';
+            const descripcion = document.getElementById('descripcion').value.trim() || 'Información adicional próximamente.';
+            const img = document.getElementById('img').value.trim() || 'img/medico.png';
 
             if (!nombre || !especialidad || !obras) {
-                alert('Por favor completá todos los campos.');
+                alert('Por favor completá todos los campos obligatorios.');
                 return;
             }
 
             const nuevoMedico = {
-                id: generarId(),
+                id: Date.now(), // identificador único
                 nombre,
                 especialidad,
                 obras,
-                img: "img/medico.png",
-                horarios: "A confirmar",
-                consultorio: "A asignar",
-                matricula: "En trámite",
-                descripcion: "Información adicional próximamente."
+                horarios,
+                consultorio,
+                matricula,
+                descripcion,
+                img
             };
 
-            const medicos = obtenerMedicos();
+            const medicos = JSON.parse(localStorage.getItem('medicos')) || [];
             medicos.push(nuevoMedico);
-            guardarMedicos(medicos);
+            localStorage.setItem('medicos', JSON.stringify(medicos));
 
-            mensajeAlta.style.color = 'green';
             mensajeAlta.textContent = `Médico "${nombre}" registrado correctamente.`;
             formAlta.reset();
 
@@ -60,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ==========================
-    // BAJA DE MEDICOS
-    // ==========================
+    // -------------------- BAJA DE MÉDICOS --------------------
     const formBaja = document.getElementById('form-baja');
     const mensajeBaja = document.getElementById('mensaje-baja');
 
@@ -71,14 +55,13 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
 
             const nombre = document.getElementById('nombre').value.trim().toLowerCase();
-            let medicos = obtenerMedicos();
+            let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
 
-            const index = medicos.findIndex(medico => medico.nombre.toLowerCase() === nombre);
+            const index = medicos.findIndex(m => m.nombre.toLowerCase() === nombre);
 
             if (index !== -1) {
                 medicos.splice(index, 1);
-                guardarMedicos(medicos);
-
+                localStorage.setItem('medicos', JSON.stringify(medicos));
                 mensajeBaja.style.color = 'green';
                 mensajeBaja.textContent = `Médico "${nombre}" dado de baja correctamente.`;
                 formBaja.reset();
@@ -93,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // ==========================
-    // EDICIÓN DE MEDICOS
-    // ==========================
+    // -------------------- EDICIÓN DE MÉDICOS --------------------
     const formEditar = document.getElementById('form-editar');
     const mensajeEditar = document.getElementById('mensaje-editar');
 
@@ -107,14 +88,14 @@ document.addEventListener('DOMContentLoaded', function () {
             const nuevaEspecialidad = document.getElementById('nueva-especialidad').value.trim();
             const nuevaObra = document.getElementById('nueva-obra').value.trim();
 
-            let medicos = obtenerMedicos();
+            let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
             const medico = medicos.find(m => m.nombre.toLowerCase() === nombre);
 
             if (medico) {
                 if (nuevaEspecialidad) medico.especialidad = nuevaEspecialidad;
                 if (nuevaObra) medico.obras = nuevaObra;
 
-                guardarMedicos(medicos);
+                localStorage.setItem('medicos', JSON.stringify(medicos));
                 mensajeEditar.style.color = 'green';
                 mensajeEditar.textContent = `Datos actualizados correctamente.`;
                 formEditar.reset();
@@ -128,44 +109,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-
-    // ==========================
-    // CARGA DEL CATALOGO EN INDEX
-    // ==========================
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-        mostrarCatalogoMedicos();
-    }
-
-    function mostrarCatalogoMedicos() {
-        const catalogo = document.getElementById('medicos-dinamicos');
-        if (!catalogo) return;
-
-        const medicos = obtenerMedicos();
-        catalogo.innerHTML = '';
-
-        medicos.forEach(medico => {
-            const card = document.createElement('div');
-            card.className = 'col-12 col-md-6 col-lg-4 d-flex';
-            card.innerHTML = `
-                <div class="card w-100 h-100">
-                    <img src="${medico.img || 'img/sinfoto.jpg'}" width="200" height="200" style="object-fit: cover;" alt="Foto de ${medico.nombre}">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">${medico.nombre}</h5>
-                        <p class="card-text">
-                            Especialidad: ${medico.especialidad}<br>
-                            Obra Social: ${medico.obras}<br>
-                            Horarios: ${medico.horarios}<br>
-                            Consultorio: ${medico.consultorio}<br>
-                            Matricula: ${medico.matricula}
-                        </p>
-                        <div class="d-grid gap-2">
-                            <a href="#" class="btn btn-primary">Solicitar Turno</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            catalogo.appendChild(card);
-        });
-    }
-
 });
+
