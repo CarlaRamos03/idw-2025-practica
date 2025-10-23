@@ -4,7 +4,11 @@ const body = document.body;
 // Recuperar tema guardado
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
-  body.setAttribute('data-bs-theme', savedTheme);
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
+  }
 }
 
 // Manejar botón si existe
@@ -15,10 +19,16 @@ if (btn) {
 
   // Cambiar tema al hacer click
   btn.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    body.setAttribute('data-bs-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    btn.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+      btn.textContent = '🌙';
+    } else {
+      body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+      btn.textContent = '☀️';
+    }
   });
+}
+
 }
