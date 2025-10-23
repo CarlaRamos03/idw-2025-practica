@@ -2,27 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contacto - Clínica Médica</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/estilos.css">    
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Médicos - Centro Médico</title>
 
-<body class="contacto">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
 
     <header>
-
-        <h1>Centro Médico IDW_57</h1>
-
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../institucional.html">Institucional</a></li>
-                <li><a href="../contacto.html">Contacto</a></li>
-            </ul>
+        <h1>CENTRO MÉDICO - IDW 57</h1>
+        <nav class="navbar navbar-expand-sm" style="background-color: var(--color-header);" data-bs-theme="light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../img/logo.png" alt="Logo" width="140" height="140"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" href="../index.html">Inicio</a>
+                        <a class="nav-link" href="../institucional.html">Institucional</a>
+                        <a class="nav-link" href="../contacto.html">Contacto</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#">Servicios</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../pacientes.html">Pacientes</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../administracion.html">Administración</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+            </div>
         </nav>
-
     </header>
-
 <main>
     <section id="editar-medicos">
         <h2>Editar Médico</h2>
