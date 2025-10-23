@@ -15,7 +15,7 @@ if (savedTheme) {
 const btn = document.getElementById('theme-toggle');
 if (btn) {
   // Actualizar texto del botón según tema guardado
-  if (savedTheme) btn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+  btn.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
 
   // Cambiar tema al hacer click
   btn.addEventListener('click', () => {
@@ -29,6 +29,4 @@ if (btn) {
       btn.textContent = '☀️';
     }
   });
-}
-
 }
