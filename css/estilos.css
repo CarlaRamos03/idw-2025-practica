@@ -20,9 +20,10 @@
 }
 
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: auto;
 }
 body {
   min-height: 100vh;
@@ -135,19 +136,16 @@ footer {
 
 /*Contacto*/
 
-/* Ajustes del contenedor principal */
 body.contacto main {
   background-color: var(--color-fondo);
   padding: 40px 15px;
 }
 
-/* Centrado del título */
 body.contacto h2 {
   color: var(--color-header);
   font-weight: 600;
 }
 
-/* Tarjetas (formulario e información) */
 body.contacto .card {
   background: var(--color-card);
   border-radius: 10px;
@@ -156,7 +154,6 @@ body.contacto .card {
   margin: 0 auto;
 }
 
-/* Botones */
 body.contacto .btn-primary {
   background-color: var(--color-btn);
   border: none;
@@ -165,7 +162,6 @@ body.contacto .btn-primary:hover {
   background-color: #16314a;
 }
 
-/* Redes sociales */
 body.contacto .btn-outline-primary img {
   filter: brightness(0) invert(0.2);
   transition: filter 0.2s;
@@ -174,6 +170,16 @@ body.contacto .btn-outline-primary:hover img {
   filter: brightness(0) invert(1);
 }
 
+body.contacto, 
+body.contacto html {
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+body.contacto main {
+  display: block !important;
+  min-height: auto !important;
+}
 /* Estilos sobrenosotros*/
 .sobre-nosotros {
   width: 100%;
