@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // -------------------- ALTA DE MÉDICOS --------------------
+    // ==========================
+    // ALTA DE MÉDICOS
+    // ==========================
     const formAlta = document.getElementById('form-alta');
     const mensajeAlta = document.getElementById('mensaje-alta');
 
@@ -10,19 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
             const nombre = document.getElementById('nombre').value.trim();
             const especialidad = document.getElementById('especialidad').value.trim();
             const obras = document.getElementById('obras').value.trim();
-            const horarios = document.getElementById('horarios').value.trim() || 'A confirmar';
-            const consultorio = document.getElementById('consultorio').value.trim() || 'A asignar';
-            const matricula = document.getElementById('matricula').value.trim() || 'En trámite';
-            const descripcion = document.getElementById('descripcion').value.trim() || 'Información adicional próximamente.';
+            const horarios = document.getElementById('horarios').value.trim();
+            const consultorio = document.getElementById('consultorio').value.trim();
+            const matricula = document.getElementById('matricula').value.trim();
+            const descripcion = document.getElementById('descripcion').value.trim();
             const img = document.getElementById('img').value.trim() || 'img/medico.png';
 
             if (!nombre || !especialidad || !obras) {
-                alert('Por favor completá todos los campos obligatorios.');
+                alert('Por favor completá los campos obligatorios: Nombre, Especialidad y Obras.');
                 return;
             }
 
+            const medicos = JSON.parse(localStorage.getItem('medicos')) || [];
+
             const nuevoMedico = {
-                id: Date.now(), // identificador único
                 nombre,
                 especialidad,
                 obras,
@@ -33,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 img
             };
 
-            const medicos = JSON.parse(localStorage.getItem('medicos')) || [];
             medicos.push(nuevoMedico);
             localStorage.setItem('medicos', JSON.stringify(medicos));
 
@@ -46,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // -------------------- BAJA DE MÉDICOS --------------------
+    // ==========================
+    // BAJA DE MÉDICOS
+    // ==========================
     const formBaja = document.getElementById('form-baja');
     const mensajeBaja = document.getElementById('mensaje-baja');
 
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         formBaja.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const nombre = document.getElementById('nombre').value.trim().toLowerCase();
+            const nombre = document.getElementById('nombre-baja').value.trim().toLowerCase();
             let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
 
             const index = medicos.findIndex(m => m.nombre.toLowerCase() === nombre);
@@ -76,17 +80,24 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // -------------------- EDICIÓN DE MÉDICOS --------------------
+    // ==========================
+    // EDICIÓN DE MÉDICOS
+    // ==========================
     const formEditar = document.getElementById('form-editar');
     const mensajeEditar = document.getElementById('mensaje-editar');
 
     if (formEditar) {
-        formEditar.addEventListener('submit', function(e) {
+        formEditar.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const nombre = document.getElementById('nombre').value.trim().toLowerCase();
+            const nombre = document.getElementById('nombre-editar').value.trim().toLowerCase();
             const nuevaEspecialidad = document.getElementById('nueva-especialidad').value.trim();
             const nuevaObra = document.getElementById('nueva-obra').value.trim();
+            const nuevosHorarios = document.getElementById('nuevos-horarios').value.trim();
+            const nuevoConsultorio = document.getElementById('nuevo-consultorio').value.trim();
+            const nuevaMatricula = document.getElementById('nueva-matricula').value.trim();
+            const nuevaDescripcion = document.getElementById('nueva-descripcion').value.trim();
+            const nuevaImg = document.getElementById('nueva-img').value.trim();
 
             let medicos = JSON.parse(localStorage.getItem('medicos')) || [];
             const medico = medicos.find(m => m.nombre.toLowerCase() === nombre);
@@ -94,10 +105,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (medico) {
                 if (nuevaEspecialidad) medico.especialidad = nuevaEspecialidad;
                 if (nuevaObra) medico.obras = nuevaObra;
+                if (nuevosHorarios) medico.horarios = nuevosHorarios;
+                if (nuevoConsultorio) medico.consultorio = nuevoConsultorio;
+                if (nuevaMatricula) medico.matricula = nuevaMatricula;
+                if (nuevaDescripcion) medico.descripcion = nuevaDescripcion;
+                if (nuevaImg) medico.img = nuevaImg;
 
                 localStorage.setItem('medicos', JSON.stringify(medicos));
                 mensajeEditar.style.color = 'green';
-                mensajeEditar.textContent = `Datos actualizados correctamente.`;
+                mensajeEditar.textContent = 'Datos actualizados correctamente.';
                 formEditar.reset();
 
                 setTimeout(() => {
@@ -110,4 +126,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
