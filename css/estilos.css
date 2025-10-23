@@ -133,53 +133,47 @@ footer {
   padding: 10px 0;
 }
 
-/* Estilos contacto */
+/*Contacto*/
+
+/* Ajustes del contenedor principal */
 body.contacto main {
-  max-width: 600px;
-  margin: 40px auto;
-  background: #fff;
-  padding: 30px;
+  background-color: var(--color-fondo);
+  padding: 40px 15px;
+}
+
+/* Centrado del título */
+body.contacto h2 {
+  color: var(--color-header);
+  font-weight: 600;
+}
+
+/* Tarjetas (formulario e información) */
+body.contacto .card {
+  background: var(--color-card);
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  text-align: left;
-  display: flex;
-  flex-direction: column;
+  border: 1px solid #ddd;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-body.contacto main h2 {
-  text-align: center;
-  color: #1a3f5c;
-  margin-bottom: 20px;
-}
-
-body.contacto main form label {
-  margin: 10px 0 5px;
-}
-
-body.contacto main form input,
-body.contacto main form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-body.contacto main form button {
-  margin-top: 20px;
-  padding: 12px;
+/* Botones */
+body.contacto .btn-primary {
+  background-color: var(--color-btn);
   border: none;
-  background-color: #1a3f5c;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
 }
-
-body.contacto main form button:hover {
+body.contacto .btn-primary:hover {
   background-color: #16314a;
 }
+
+/* Redes sociales */
+body.contacto .btn-outline-primary img {
+  filter: brightness(0) invert(0.2);
+  transition: filter 0.2s;
+}
+body.contacto .btn-outline-primary:hover img {
+  filter: brightness(0) invert(1);
+}
+
 /* Estilos sobrenosotros*/
 .sobre-nosotros {
   width: 100%;
