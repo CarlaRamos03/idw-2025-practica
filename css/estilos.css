@@ -7,7 +7,7 @@
   --color-borde: #1a3f5c;
   --color-btn: #1a3f5c;
   --color-btn-texto: #ffffff;
-};
+}
  body.dark-mode {
   --color-fondo: #121212;
   --color-texto: #f1f1f1;
@@ -39,8 +39,6 @@ main {
   padding: 40px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 header {
@@ -108,7 +106,7 @@ section.profesionales {
     justify-content: center;
 
     width: 100%; 
-    max-width: 18rem;
+    max-width: none;
     box-sizing: border-box;
 }
 .profesional:hover {
@@ -218,7 +216,7 @@ body.contacto main form button:hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   width: 100%;
-  max-width: 18rem; 
+  max-width: none; 
   box-sizing: border-box;
 }
 
@@ -257,7 +255,7 @@ body.contacto main form button:hover {
 }
 
 .card-img-top {
-  width: auto;
-  height: 140px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
