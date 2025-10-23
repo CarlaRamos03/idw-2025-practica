@@ -1,12 +1,13 @@
+// Obtener el body
 const body = document.body;
-const savedTheme = localStorage.getItem('theme');
 
-// Aplicar tema guardado automáticamente
+// Recuperar tema guardado
+const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   body.setAttribute('data-bs-theme', savedTheme);
 }
 
-// Manejar botón de cambio de tema solo si existe
+// Manejar botón si existe
 const btn = document.getElementById('theme-toggle');
 if (btn) {
   // Actualizar texto del botón según tema guardado
