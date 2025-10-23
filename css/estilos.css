@@ -8,7 +8,8 @@
   --color-btn: #1a3f5c;
   --color-btn-texto: #ffffff;
 }
- body.dark-mode {
+
+body.dark-mode {
   --color-fondo: #121212;
   --color-texto: #f1f1f1;
   --color-header: #0d1b2a;
@@ -19,12 +20,14 @@
   --color-btn-texto: #ffffff;
 }
 
+/* Reset y estructura */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -33,6 +36,7 @@ body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -42,12 +46,14 @@ main {
   flex-direction: column;
 }
 
+/* Header */
 header {
-    background: #1a3f5c;
-    color: #fff;
-    padding: 20px 0 10px 0;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(112, 112, 103, 0);
+  background-color: var(--color-header);
+  color: var(--color-texto);
+  padding: 20px 0 10px 0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header h1 {
@@ -55,6 +61,7 @@ header h1 {
   font-size: 2em;
 }
 
+/* Navegación */
 nav ul {
   list-style: none;
   padding: 0;
@@ -65,7 +72,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--color-texto);
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
@@ -75,41 +82,44 @@ nav ul li a:hover {
   color: #75a9c5;
 }
 
-
-
+/* Sección profesionales */
 section.profesionales {
   width: 100%;
   max-width: 1200px;
-  background: #fff;
+  background-color: var(--color-card);
   padding: 20px;
   margin: 0 auto 20px auto;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
+  color: var(--color-texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Lista profesionales con grid */
 .lista-profesionales {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 100%;
 }
 
+/* Cada profesional */
 .profesional {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
-    border-radius: 8px;
-    padding: 18px 22px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--color-card);
+  color: var(--color-texto);
+  border-radius: 8px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    width: 100%; 
-    max-width: none;
-    box-sizing: border-box;
+  width: 100%; 
+  box-sizing: border-box;
 }
+
 .profesional:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
@@ -117,25 +127,26 @@ section.profesionales {
 
 .profesional h3 {
   margin-top: 0;
-  color: #1a3f5c;
+  color: var(--color-header);
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
 .profesional p {
   margin: 6px 0;
-  color: #444;
+  color: var(--color-texto);
 }
 
+/* Footer */
 footer {
-  background: #1a3f5c;
-  color: #fff;
+  background-color: var(--color-footer);
+  color: var(--color-texto);
   text-align: center;
   padding: 10px 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/*Contacto*/
-
+/* Contacto */
 body.contacto main {
   background-color: var(--color-fondo);
   padding: 40px 15px;
@@ -149,17 +160,22 @@ body.contacto h2 {
 }
 
 body.contacto .card {
-  background: var(--color-card);
+  background-color: var(--color-card);
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-borde);
   max-width: 700px;
   margin: 0 auto;
+  color: var(--color-texto);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body.contacto .btn-primary {
   background-color: var(--color-btn);
   border: none;
+  color: var(--color-btn-texto);
+  transition: background-color 0.3s ease;
 }
+
 body.contacto .btn-primary:hover {
   background-color: #16314a;
 }
@@ -168,6 +184,7 @@ body.contacto .btn-outline-primary img {
   filter: brightness(0) invert(0.2);
   transition: filter 0.2s;
 }
+
 body.contacto .btn-outline-primary:hover img {
   filter: brightness(0) invert(1);
 }
@@ -182,47 +199,50 @@ body.contacto main {
   display: block !important;
   min-height: auto !important;
 }
-/* Ajustes responsive para móviles en contacto */
+
+/* Responsive para contacto */
 @media (max-width: 576px) {
   body.contacto main {
     padding: 20px 10px;
-}
+  }
 
   body.contacto .container {
     padding-left: 10px;
     padding-right: 10px;
- }
+  }
 
   body.contacto .card {
     max-width: 100% !important;
     margin: 0 auto 20px auto;
     border-radius: 8px;
-}
+  }
 
   body.contacto .btn-primary {
     width: 100%;
     padding: 14px;
- }
-  
-  /* Asegurar que las imágenes dentro de los botones sociales no desborden */
+  }
+
   body.contacto .btn-outline-primary img {
     max-width: 24px;
     height: auto;
- }
-  
-/* Estilos sobrenosotros*/
+  }
+}
+
+/* Sobre nosotros */
 .sobre-nosotros {
   width: 100%;
-  background: #fff;
+  background-color: var(--color-card);
   padding: 40px 5vw;
   box-sizing: border-box;
   border-radius: 0;
   box-shadow: none;
+  color: var(--color-texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sobre-nosotros h2 {
   text-align: center;
-  color: #1a3f5c;
+  color: var(--color-header);
   margin-bottom: 25px;
   font-size: 2rem;
   font-weight: 600;
@@ -240,16 +260,15 @@ body.contacto main {
 .card-nosotros {
   background-color: var(--color-card);
   color: var(--color-texto);
-  border-color: var(--color-borde);
+  border: 1px solid var(--color-borde);
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 
   width: 100%;
-  max-width: none; 
+  max-width: none;
   box-sizing: border-box;
 }
-
 
 .card-nosotros:hover {
   transform: translateY(-4px);
@@ -258,21 +277,20 @@ body.contacto main {
 
 .card-nosotros p {
   margin: 0;
-  color: #333;
   font-size: 1em;
   line-height: 1.5;
 }
+
 .bloque-extra {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   padding: 25px 30px;
   background-color: var(--color-card);
-  color: var(--color-texto);
-  border-color: var(--color-borde);
+  border: 1px solid var(--color-borde);
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
-  color: #1a3f5c;
+  color: var(--color-header);
   font-family: 'Georgia', serif;
   font-size: 1.1em;
   line-height: 1.6;
@@ -280,8 +298,10 @@ body.contacto main {
   box-sizing: border-box;
   display: block;
 }
+
 .card, .card-body {
   text-align: center;
+  color: var(--color-texto);
 }
 
 .card-img-top {
@@ -289,3 +309,28 @@ body.contacto main {
   height: auto;
   object-fit: cover;
 }
+
+/* Botones primarios (general) */
+.btn-primary {
+  background-color: var(--color-btn);
+  color: var(--color-btn-texto);
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #16314a;
+}
+
+/* Botón alternar tema (claro/oscuro) */
+#theme-toggle {
+  background-color: var(--color-btn);
+  color: var(--color-btn-texto);
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#theme-toggle:hover {
+  background-color: #16314a;
+  cursor: pointer;
+}
+
