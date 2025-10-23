@@ -180,6 +180,34 @@ body.contacto main {
   display: block !important;
   min-height: auto !important;
 }
+/* Ajustes responsive para móviles en contacto */
+@media (max-width: 576px) {
+  body.contacto main {
+    padding: 20px 10px;
+}
+
+  body.contacto .container {
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+
+  body.contacto .card {
+    max-width: 100% !important;
+    margin: 0 auto 20px auto;
+    border-radius: 8px;
+}
+
+  body.contacto .btn-primary {
+    width: 100%;
+    padding: 14px;
+ }
+  
+  /* Asegurar que las imágenes dentro de los botones sociales no desborden */
+  body.contacto .btn-outline-primary img {
+    max-width: 24px;
+    height: auto;
+ }
+  
 /* Estilos sobrenosotros*/
 .sobre-nosotros {
   width: 100%;
