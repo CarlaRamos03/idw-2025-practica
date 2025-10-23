@@ -22,38 +22,35 @@ body.dark-mode {
 
 /* Reset y estructura */
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
 }
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+  background: #f4f4f4;
+  color: #333;
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
-  flex: 1 0 auto;
+  flex: 1;
   padding: 40px 15px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Header */
 header {
-  background-color: var(--color-header);
-  color: var(--color-texto);
-  padding: 20px 0 10px 0;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+    background: #1a3f5c;
+    color: #fff;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(112, 112, 103, 0);
 }
 
 header h1 {
@@ -61,7 +58,6 @@ header h1 {
   font-size: 2em;
 }
 
-/* Navegación */
 nav ul {
   list-style: none;
   padding: 0;
@@ -72,7 +68,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--color-texto);
+  color: #fff;
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
@@ -82,44 +78,39 @@ nav ul li a:hover {
   color: #75a9c5;
 }
 
-/* Sección profesionales */
+
+
 section.profesionales {
   width: 100%;
   max-width: 1200px;
-  background-color: var(--color-card);
+  background: #fff;
   padding: 20px;
   margin: 0 auto 20px auto;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
-  color: var(--color-texto);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Lista profesionales con grid */
 .lista-profesionales {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    width: 100%;
 }
 
-/* Cada profesional */
 .profesional {
-  background-color: var(--color-card);
-  color: var(--color-texto);
-  border-radius: 8px;
-  padding: 18px 22px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  width: 100%; 
-  box-sizing: border-box;
+    background: #f0f4f7;
+    border: 1px solid #1a3f5c;
+    border-radius: 8px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
 }
-
 .profesional:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
@@ -127,122 +118,83 @@ section.profesionales {
 
 .profesional h3 {
   margin-top: 0;
-  color: var(--color-header);
+  color: #1a3f5c;
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
 .profesional p {
   margin: 6px 0;
-  color: var(--color-texto);
+  color: #444;
 }
 
-/* Footer */
 footer {
-  background-color: var(--color-footer);
-  color: var(--color-texto);
+  background: #1a3f5c;
+  color: #fff;
   text-align: center;
   padding: 10px 0;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Contacto */
+/* Estilos contacto */
 body.contacto main {
-  background-color: var(--color-fondo);
-  padding: 40px 15px;
-  display: block;
-  min-height: auto;
-}
-
-body.contacto h2 {
-  color: var(--color-header);
-  font-weight: 600;
-}
-
-body.contacto .card {
-  background-color: var(--color-card);
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
   border-radius: 10px;
-  border: 1px solid var(--color-borde);
-  max-width: 700px;
-  margin: 0 auto;
-  color: var(--color-texto);
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
-body.contacto .btn-primary {
-  background-color: var(--color-btn);
+body.contacto main h2 {
+  text-align: center;
+  color: #1a3f5c;
+  margin-bottom: 20px;
+}
+
+body.contacto main form label {
+  margin: 10px 0 5px;
+}
+
+body.contacto main form input,
+body.contacto main form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body.contacto main form button {
+  margin-top: 20px;
+  padding: 12px;
   border: none;
-  color: var(--color-btn-texto);
-  transition: background-color 0.3s ease;
+  background-color: #1a3f5c;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-body.contacto .btn-primary:hover {
+body.contacto main form button:hover {
   background-color: #16314a;
 }
-
-body.contacto .btn-outline-primary img {
-  filter: brightness(0) invert(0.2);
-  transition: filter 0.2s;
-}
-
-body.contacto .btn-outline-primary:hover img {
-  filter: brightness(0) invert(1);
-}
-
-body.contacto, 
-body.contacto html {
-  height: auto !important;
-  overflow-y: auto !important;
-}
-
-body.contacto main {
-  display: block !important;
-  min-height: auto !important;
-}
-
-/* Responsive para contacto */
-@media (max-width: 576px) {
-  body.contacto main {
-    padding: 20px 10px;
-  }
-
-  body.contacto .container {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  body.contacto .card {
-    max-width: 100% !important;
-    margin: 0 auto 20px auto;
-    border-radius: 8px;
-  }
-
-  body.contacto .btn-primary {
-    width: 100%;
-    padding: 14px;
-  }
-
-  body.contacto .btn-outline-primary img {
-    max-width: 24px;
-    height: auto;
-  }
-}
-
-/* Sobre nosotros */
+/* Estilos sobrenosotros*/
 .sobre-nosotros {
   width: 100%;
-  background-color: var(--color-card);
+  background: #fff;
   padding: 40px 5vw;
   box-sizing: border-box;
   border-radius: 0;
   box-shadow: none;
-  color: var(--color-texto);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sobre-nosotros h2 {
   text-align: center;
-  color: var(--color-header);
+  color: #1a3f5c;
   margin-bottom: 25px;
   font-size: 2rem;
   font-weight: 600;
@@ -258,15 +210,13 @@ body.contacto main {
 }
 
 .card-nosotros {
-  background-color: var(--color-card);
-  color: var(--color-texto);
-  border: 1px solid var(--color-borde);
+  width: 280px; 
+  background-color: #f0f4f7;
+  border: 1px solid #1a3f5c;
+  border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-
-  width: 100%;
-  max-width: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
@@ -277,20 +227,21 @@ body.contacto main {
 
 .card-nosotros p {
   margin: 0;
+  color: #333;
   font-size: 1em;
   line-height: 1.5;
 }
-
 .bloque-extra {
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   padding: 25px 30px;
-  background-color: var(--color-card);
-  border: 1px solid var(--color-borde);
+  background-color: #f0f4f7; 
+  border: 1px solid #1a3f5c; 
+  border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
-  color: var(--color-header);
+  color: #1a3f5c;
   font-family: 'Georgia', serif;
   font-size: 1.1em;
   line-height: 1.6;
@@ -298,39 +249,3 @@ body.contacto main {
   box-sizing: border-box;
   display: block;
 }
-
-.card, .card-body {
-  text-align: center;
-  color: var(--color-texto);
-}
-
-.card-img-top {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Botones primarios (general) */
-.btn-primary {
-  background-color: var(--color-btn);
-  color: var(--color-btn-texto);
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #16314a;
-}
-
-/* Botón alternar tema (claro/oscuro) */
-#theme-toggle {
-  background-color: var(--color-btn);
-  color: var(--color-btn-texto);
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-#theme-toggle:hover {
-  background-color: #16314a;
-  cursor: pointer;
-}
-
