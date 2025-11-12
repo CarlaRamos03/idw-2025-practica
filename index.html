@@ -28,10 +28,9 @@
                             <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button">Servicios</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="pacientes.html">Pacientes</a></li>
+                                <li><a class="dropdown-item" href="turnos.html">Mis Turnos</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="administracion.html">Administración</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="usuarios.html">Usuarios</a></li>
                             </ul>
                         </li>
                     </div>
@@ -50,18 +49,54 @@
     </main>
 
     <!-- Modal para ver información del médico -->
-    <div class="modal fade" id="infoMedicoModal" tabindex="-1" aria-labelledby="infoMedicoLabel" aria-hidden="true">
+    <div class="modal fade" id="infoMedicoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="infoMedicoLabel">Información del Médico</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body" id="infoMedicoBody">
-                    <!-- Contenido dinámico -->
+                    <!-- Contenido dinámico del médico -->
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="mostrarFormularioTurno()">Solicitar Turno</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para solicitar turno -->
+    <div class="modal fade" id="turnoModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Solicitar Turno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formTurno">
+                        <input type="hidden" id="medicoSeleccionado">
+                        <div class="mb-3">
+                            <label for="nombrePaciente" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombrePaciente" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fechaTurno" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="fechaTurno" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="horaTurno" class="form-label">Hora</label>
+                            <select class="form-select" id="horaTurno" required>
+                                <option value="">Seleccione un horario</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="confirmarTurno()">Confirmar Turno</button>
                 </div>
             </div>
         </div>
