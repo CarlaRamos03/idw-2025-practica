@@ -37,7 +37,3 @@ if (medicos.length > 0) {
            contenedor.appendChild(col);
          });
      }
-
-           contenedor.appendChild(col);
-         });
-     }
