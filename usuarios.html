@@ -46,26 +46,27 @@
 
     </header>
   
-  <main>
-    <section class="Usuarios">
-    <h2>Usuarios</h2>
-      
-    <div class="table-responsive">
-  <table class="table table-bordered table-striped table-hover w-100 align-middle text-center" id="tablaUsuarios">
-    <thead class="table-primary">
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Usuario</th>
-        <th>Email</th>
-        <th>Teléfono</th>
-      </tr>
-        </thead>
-        <tbody>
-          <!-- Se llenará desde gestion_usuarios.js -->
-        </tbody>
-      </table>
-    </div>
+  <main class="container-fluid my-5 px-4">
+    <section class="usuarios">
+      <h2 class="text-center mb-4 fw-bold text-primary">Listado de Usuarios</h2>
+
+      <div class="table-responsive shadow-lg rounded">
+        <table class="table table-bordered table-striped table-hover w-100 align-middle text-center" id="tablaUsuarios">
+          <thead class="table-primary">
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Usuario</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Se llenará desde gestion_usuarios.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -76,3 +77,4 @@
   <script src="js/gestion_usuarios.js"></script>
 </body>
 </html>
+
